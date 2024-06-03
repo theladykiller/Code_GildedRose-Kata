@@ -9,7 +9,7 @@ describe("Gilded Rose", function() {
   });
 
   //2.
-  it("name = foo, sell_in = 5, quality = 4", function() {
+  it("sell_in = 4, quality = 3", function() {
     items = [ new Item("foo", 5, 4) ];
     update_quality();
     expect(items[0].sell_in).toEqual(4);
@@ -17,7 +17,7 @@ describe("Gilded Rose", function() {
   });
 
   //3.
-  it("name = foo, sell_in = 5, quality = 4", function() {
+  it("sell_in = -2, quality = 2", function() {
     items = [ new Item("foo", -1, 4) ];
     update_quality();
     expect(items[0].sell_in).toEqual(-2);
@@ -25,11 +25,22 @@ describe("Gilded Rose", function() {
   });
 
   //4.
-  it("name = foo, sell_in = 5, quality = 4", function() {
+  it("sell_in = -2, quality = 0", function() {
     items = [ new Item("foo", -1, 1) ];
     update_quality();
     expect(items[0].sell_in).toEqual(-2);
     expect(items[0].quality).toEqual(0);
+  });
+
+  //5.
+  it("sell_in = 0, quality = 5 / after function / sell_in = -1, quality = 7", function() {
+    items = [ new Item("Aged Brie", 1, 4) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(0);
+    expect(items[0].quality).toEqual(5);
+    update_quality();
+    expect(items[0].sell_in).toEqual(-1);
+    expect(items[0].quality).toEqual(7);
   });
 
 });

@@ -15,11 +15,11 @@
     => items[0].sell_in should return "-2"
     => items[0].quality should return "0" (lowers by one because cant have negative quality)
 
-5. for new Item("Aged Brie", 0, 4) after update_quality() is run once
-    => items[0].sell_in should return "-1"
+5. for new Item("Aged Brie", 1, 4) after update_quality() is run once
+    => items[0].sell_in should return "0"
     => items[0].quality should return "5"
     after another update_quality() call:
-    => items[0].sell_in should return "-2"
+    => items[0].sell_in should return "-1"
     => items[0].quality should return "7"
 
 6. for new Item("foo", 5, 50) after update_quality() is run once
