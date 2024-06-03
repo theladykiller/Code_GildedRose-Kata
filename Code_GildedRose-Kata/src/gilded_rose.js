@@ -18,7 +18,7 @@ function update_quality() {
     if (items[i].name != 'Sulfuras, Hand of Ragnaros')
       items[i].sell_in --;
 
-    if (items[i].quality < 0) //justu some safety precautions
+    if (items[i].quality < 0) //just some safety precautions
       items[i].quality = 0;
 
     if(items[i].quality > 0 && items[i].quality < 50) {
