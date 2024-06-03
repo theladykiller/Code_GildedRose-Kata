@@ -1,0 +1,42 @@
+1. for new Item("foo", 5, 4)
+    => items[0].name should return "fixme"
+    => items[0].sell_in should return "5"
+    => items[0].quality should return "4"
+
+2. for new Item("foo", 5, 4) after update_quality() is run once
+    => items[0].sell_in should return "4"
+    => items[0].quality should return "3"
+
+3. for new Item("foo", -1, 4) after update_quality() is run once
+    => items[0].sell_in should return "-2"
+    => items[0].quality should return "2"
+
+4. for new Item("foo", -1, 1) after update_quality() is run once
+    => items[0].sell_in should return "-2"
+    => items[0].quality should return "0" (lowers by one because cant have negative quality)
+
+5. for new Item("Aged Brie", 0, 4) after update_quality() is run once
+    => items[0].sell_in should return "-1"
+    => items[0].quality should return "5"
+    after another update_quality() call:
+    => items[0].sell_in should return "-2"
+    => items[0].quality should return "7"
+
+6. for new Item("foo", 5, 50) after update_quality() is run once
+    => items[0].quality should return "50"
+
+7. for new Item("Sulfuras, Hand of Ragnaros", 25, 80) after update_quality() is run once
+    => items[0].sell_in should return "25"
+    => items[0].quality should return "80"
+
+8. or new Item("Backstage passes to a TAFKAL80ETC concert", 10, 25) after update_quality() is run once
+    => items[0].sell_in should return "9"
+    => items[0].quality should return "27" (under 11 sell_in it increses by 2)
+    
+9. or new Item("Backstage passes to a TAFKAL80ETC concert", 5, 25) after update_quality() is run once
+    => items[0].sell_in should return "4"
+    => items[0].quality should return "28" (under 6 sell_in it increses by 3)
+    
+10. or new Item("Backstage passes to a TAFKAL80ETC concert", 0, 25) after update_quality() is run once
+    => items[0].sell_in should return "-1"
+    => items[0].quality should return "0" (at 0 sell_in it loses whole value)
