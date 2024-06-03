@@ -40,3 +40,7 @@
 10. or new Item("Backstage passes to a TAFKAL80ETC concert", 0, 25) after update_quality() is run once
     => items[0].sell_in should return "-1"
     => items[0].quality should return "0" (at 0 sell_in it loses whole value)
+    
+11. or new Item("Conjured", 5, 5) after update_quality() is run once
+    => items[0].sell_in should return "4"
+    => items[0].quality should return "3"
