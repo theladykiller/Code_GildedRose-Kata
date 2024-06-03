@@ -81,4 +81,12 @@ describe("Gilded Rose", function() {
     expect(items[0].sell_in).toEqual(-1);
     expect(items[0].quality).toEqual(0);
   });
+
+  //11.
+  it("sell_in = 4, quality = 3", function() {
+    items = [ new Item("Conjured", 5, 5) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(4);
+    expect(items[0].quality).toEqual(3);
+  });
 });
