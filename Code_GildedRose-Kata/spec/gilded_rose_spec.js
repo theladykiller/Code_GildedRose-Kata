@@ -16,4 +16,12 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(3);
   });
 
+  //3.
+  it("name = foo, sell_in = 5, quality = 4", function() {
+    items = [ new Item("foo", -1, 4) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(-2);
+    expect(items[0].quality).toEqual(2);
+  });
+
 });
