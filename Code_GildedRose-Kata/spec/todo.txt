@@ -22,7 +22,7 @@
     => items[0].sell_in should return "-1"
     => items[0].quality should return "7"
 
-6. for new Item("foo", 5, 50) after update_quality() is run once
+6. for new Item("Aged Brie", 5, 50) after update_quality() is run once
     => items[0].quality should return "50"
 
 7. for new Item("Sulfuras, Hand of Ragnaros", 25, 80) after update_quality() is run once
