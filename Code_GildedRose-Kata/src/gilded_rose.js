@@ -15,9 +15,11 @@ items.push(new Item('Conjured Mana Cake', 3, 6));
 
 function update_quality() {
   for (var i = 0; i < items.length; i++) {
-    if (items[i].name != 'Sulfuras, Hand of Ragnaros') {
+    if (items[i].name != 'Sulfuras, Hand of Ragnaros')
       items[i].sell_in --;
-    }
+
+    if (items[i].quality < 0) //justu some safety precautions
+      items[i].quality = 0;
 
     if(items[i].quality > 0 && items[i].quality < 50) {
       if (items[i].name == 'Aged Brie'){
