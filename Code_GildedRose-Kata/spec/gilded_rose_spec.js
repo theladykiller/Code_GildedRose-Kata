@@ -58,4 +58,28 @@ describe("Gilded Rose", function() {
     expect(items[0].quality).toEqual(80);
   });
 
+  //8.
+  it("sell_in = 9, quality = 27", function() {
+    items = [ new Item("Backstage passes to a TAFKAL80ETC concert", 10, 25) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(9);
+    expect(items[0].quality).toEqual(27);
+  });
+
+  //9.
+  it("sell_in = 4, quality = 28", function() {
+    items = [ new Item("Backstage passes to a TAFKAL80ETC concert", 5, 25) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(4);
+    expect(items[0].quality).toEqual(28);
+  });
+
+  //10.
+  it("sell_in = -1, quality = 0", function() {
+    items = [ new Item("Backstage passes to a TAFKAL80ETC concert", 0, 25) ];
+    update_quality();
+    expect(items[0].sell_in).toEqual(-1);
+    expect(items[0].quality).toEqual(0);
+  });
+
 });
